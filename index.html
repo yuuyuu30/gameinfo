@@ -56,7 +56,7 @@ main{max-width:900px;margin:0 auto;padding:0 24px 80px}
 .cat-block{border:1px solid var(--border);padding:16px}
 .cat-block:hover{border-color:var(--border2)}
 .cat-lbl{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px}
-.cat-lbl.ev{color:var(--event)}.cat-lbl.gp{color:var(--campaign)}.cat-lbl.ne{color:var(--bug)}.cat-lbl.mt{color:var(--maint)}.cat-lbl.gd{color:var(--birthday)}.cat-lbl.sq{color:var(--sequel)}
+.cat-lbl.ev{color:var(--event)}.cat-lbl.gp{color:var(--campaign)}.cat-lbl.ne{color:var(--bug)}.cat-lbl.mt{color:var(--maint)}.cat-lbl.gds{color:var(--birthday)}.cat-lbl.sq{color:var(--sequel)}
 .cat-item{padding:10px 0;border-bottom:1px solid var(--border)}
 .cat-item:last-child{border-bottom:none;padding-bottom:0}
 .ci-title{font-size:12px;font-weight:700;color:var(--white);margin-bottom:3px}
@@ -129,7 +129,7 @@ main{max-width:900px;margin:0 auto;padding:0 24px 80px}
     <div class="cat-block"><div class="cat-lbl gp">新ピックアップ召喚</div><div class="cat-empty">読み込み中...</div></div>
     <div class="cat-block"><div class="cat-lbl ne">新着イベント開催情報</div><div class="cat-empty">読み込み中...</div></div>
     <div class="cat-block"><div class="cat-lbl mt">メンテナンス情報</div><div class="cat-empty">読み込み中...</div></div>
-    <div class="cat-block"><div class="cat-lbl gd">グッズ情報</div><div class="cat-empty">読み込み中...</div></div>
+    <div class="cat-block"><div class="cat-lbl gds">グッズ情報</div><div class="cat-empty">読み込み中...</div></div>
     <div class="cat-block"><div class="cat-lbl sq">続編公開</div><div class="cat-empty">読み込み中...</div></div>
   </div>
 </div>
@@ -176,7 +176,7 @@ const CATS=[
   {key:'gachaPickup',lbl:'新ピックアップ召喚',cls:'gp'},
   {key:'newEvents',lbl:'新着イベント開催情報',cls:'ne'},
   {key:'maintenance',lbl:'メンテナンス情報',cls:'mt'},
-  {key:'goods',lbl:'グッズ情報',cls:'gd'},
+  {key:'goods',lbl:'グッズ情報',cls:'gds'},
   {key:'sequel',lbl:'続編公開',cls:'sq'}
 ];
 
