@@ -25,13 +25,37 @@
   --port:#4b6b9b;
   --remaster:#9b7040;
   --spin:#9b4b6b;
+  --dot-color:#141414;
+  --tw-link:#5b8ec8;
+  --tw-link-hover:#7aaee8;
 }
-body{background:var(--bg);color:var(--text);font-family:'Space Mono','Courier New',monospace;font-size:13px;line-height:1.7}
+[data-theme="light"]{
+  --bg:#f8f8f6;
+  --s1:#f0f0ed;
+  --border:#e0e0db;
+  --border2:#c8c8c0;
+  --text:#2a2a2a;
+  --dim:#888880;
+  --dimmer:#c8c8c0;
+  --white:#0a0a0a;
+  --event:#9b7a20;
+  --bug:#b03030;
+  --campaign:#208060;
+  --birthday:#6b3db0;
+  --new:#2a6b3a;
+  --port:#2a4b7b;
+  --remaster:#7b5020;
+  --spin:#7b2a4b;
+  --dot-color:#e0e0da;
+  --tw-link:#2a5b9b;
+  --tw-link-hover:#1a4080;
+}
+body{background:var(--bg);color:var(--text);font-family:'Space Mono','Courier New',monospace;font-size:13px;line-height:1.7;transition:background .2s,color .2s}
 a{color:inherit;text-decoration:none}
 
 /* ── header ── */
 header{
-  background-image:radial-gradient(circle,#141414 1px,transparent 1px);
+  background-image:radial-gradient(circle,var(--dot-color) 1px,transparent 1px);
   background-size:16px 16px;
   padding:40px 24px 30px;
   border-bottom:1px solid var(--border2);
@@ -40,6 +64,13 @@ header{
 .h-eyebrow{font-size:10px;color:var(--dim);letter-spacing:.5em;text-transform:uppercase;margin-bottom:10px}
 .h-title{font-size:22px;font-weight:700;color:var(--white);letter-spacing:.02em}
 .h-sub{font-size:11px;color:var(--dim);margin-top:10px;letter-spacing:.05em}
+.h-row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.theme-btn{
+  font-family:inherit;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--dim);background:transparent;border:1px solid var(--border2);
+  padding:5px 12px;cursor:pointer;transition:color .15s,border-color .15s;white-space:nowrap;flex-shrink:0;
+}
+.theme-btn:hover{color:var(--white);border-color:var(--text)}
 
 /* ── layout ── */
 main{max-width:880px;margin:0 auto;padding:0 24px 80px}
@@ -76,8 +107,8 @@ section{padding:40px 0;border-bottom:1px solid var(--border)}
 .tag-remaster{border-color:var(--remaster);color:var(--remaster)}
 .tag-spin{border-color:var(--spin);color:var(--spin)}
 .g-platform{font-size:10px;color:var(--dimmer)}
-.g-tw-handle{font-size:10px;color:#5b8ec8;display:block;margin-bottom:5px}
-.g-tw-handle:hover{text-decoration:underline;color:#7aaee8}
+.g-tw-handle{font-size:10px;color:var(--tw-link);display:block;margin-bottom:5px}
+.g-tw-handle:hover{text-decoration:underline;color:var(--tw-link-hover)}
 .g-tw-body{font-size:11px;color:var(--dim);line-height:1.75}
 .g-no-data{font-size:10px;color:var(--dimmer);font-style:italic}
 
@@ -95,7 +126,10 @@ section{padding:40px 0;border-bottom:1px solid var(--border)}
 <header>
 <div class="h-inner">
   <div class="h-eyebrow">gameinfo · dashboard</div>
-  <div class="h-title">乙女ゲーム 情報</div>
+  <div class="h-row">
+    <div class="h-title">乙女ゲーム 情報</div>
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">light</button>
+  </div>
   <div class="h-sub" id="hSub">——</div>
 </div>
 </header>
@@ -200,6 +234,24 @@ GAMES.forEach(g=>{
 });
 
 document.getElementById('hSub').textContent='最終更新 '+new Date().toLocaleString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+
+function toggleTheme(){
+  const html=document.documentElement;
+  const btn=document.getElementById('themeBtn');
+  if(html.getAttribute('data-theme')==='light'){
+    html.removeAttribute('data-theme');
+    btn.textContent='light';
+    localStorage.setItem('theme','dark');
+  } else {
+    html.setAttribute('data-theme','light');
+    btn.textContent='dark';
+    localStorage.setItem('theme','light');
+  }
+}
+if(localStorage.getItem('theme')==='light'){
+  document.documentElement.setAttribute('data-theme','light');
+  document.getElementById('themeBtn').textContent='dark';
+}
 </script>
 </body>
 </html>
