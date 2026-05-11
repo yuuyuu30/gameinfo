@@ -1,9 +1,30 @@
 {
-  "updated": "2026-05-11T09:56:16.260Z",
+  "updated": "2026-05-11T10:07:01.805Z",
   "ryugu": {
-    "activeEvents": [],
-    "gachaPool": [],
-    "updates": [],
+    "activeEvents": [
+      {
+        "title": "ダリウス登場記念",
+        "desc": "投稿キャンペーン＆ログインでSRダリウス",
+        "date": "2026-05-11 23:59",
+        "url": "https://x.com/haruka_ryugu/status/2049051202143613325/photo/1"
+      }
+    ],
+    "gachaPool": [
+      {
+        "title": "ダリウス召喚",
+        "desc": "ダリウスさん召喚、本日23:55まで",
+        "date": "2026-05-11 23:55",
+        "url": "https://x.com/haruka_ryugu/status/2053671448846254509/photo/1"
+      }
+    ],
+    "updates": [
+      {
+        "title": "不具合報告",
+        "desc": "メール一括開封・土方SSR術文・自動編成不具合",
+        "date": "",
+        "url": "https://x.com/haruka_ryugu/status/2052660292044423583"
+      }
+    ],
     "goods": []
   },
   "games": {
