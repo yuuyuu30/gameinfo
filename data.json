@@ -1,0 +1,61 @@
+{
+  "updated": "2026-05-11T08:00:00.000Z",
+  "ryugu": [
+    {
+      "type": "event",
+      "text": "【運営】\n神子さま、よろず屋のマンボウです！今日のお昼はなんですか？おいらは、茶寮で梅のおにぎりをいただいたよ。\n\nところで、ダリウスさんの召喚が、\n本日　2026年5月11日(月)23:55まで！\nお見逃しなく！",
+      "date": "2026-05-11",
+      "url": "https://x.com/haruka_ryugu/status/2053671448846254509"
+    },
+    {
+      "type": "campaign",
+      "text": "【リマインド】\n「ダリウス」登場記念 投稿キャンペーン開催中\n\n応募〆切は【5/11(月) 23:59】まで！\n指定ハッシュタグ「#りゅうみこダリウス登場」を付けて感想を投稿してね♪\n\n5/11までのログインでSRダリウスがもらえる✨",
+      "date": "2026-05-09",
+      "url": "https://x.com/haruka_ryugu/status/2053037265769713840"
+    },
+    {
+      "type": "bug",
+      "text": "【不具合のお知らせ】以下の不具合を確認しています：\n① メール一括開封の不具合\n② 土方SSR 術説明テキストの誤り\n③ 自動編成での特効優先処理の不具合\n順次対応中です。ご迷惑をおかけします。",
+      "date": "2026-05-08",
+      "url": "https://x.com/haruka_ryugu"
+    },
+    {
+      "type": "birthday",
+      "text": "今日は桜霞の世界からいらした源 頼朝さまのお誕生日ですよ！おめでとうございます🎂",
+      "date": "2026-05-09",
+      "url": "https://x.com/haruka_ryugu/status/2052946664940241328"
+    }
+  ],
+  "games": {
+    "@CC_otomate": {
+      "latestText": "カードゲーム×乙女のシステム紹介中。発売まで段階的に情報解禁予定。 #クレチェン",
+      "date": "2026-05-10",
+      "url": "https://x.com/CC_otomate"
+    },
+    "@KK_otomate": {
+      "latestText": "CG解禁・キャラPV公開中。発売日に向けて情報強化中。 #わくでき",
+      "date": "2026-05-10",
+      "url": "https://x.com/KK_otomate"
+    },
+    "@WitchB_otomate": {
+      "latestText": "5/11〜5/15の週、毎日「愛のテーマ＋キャラCV」を公開中。 #ベレ魔女",
+      "date": "2026-05-11",
+      "url": "https://x.com/WitchB_otomate"
+    },
+    "@Le_Mirage_jp": {
+      "latestText": "予約キャンペーン終了（5/10）。全国店舗特典確定、次の情報解禁待ち。 #ミラミス",
+      "date": "2026-05-10",
+      "url": "https://x.com/Le_Mirage_jp"
+    },
+    "@SN_otomate": {
+      "latestText": "イベントCG解禁が順次進行中。 #サリライ",
+      "date": "2026-05-09",
+      "url": "https://x.com/SN_otomate"
+    },
+    "@takuyo_jolly": {
+      "latestText": "専用アカウントなし。TAKUYO公式より。2025年11月以降更新なし。",
+      "date": "2025-11-01",
+      "url": "https://x.com/takuyo_jolly"
+    }
+  }
+}
