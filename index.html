@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ゲーム情報ダッシュボード</title>
+<style>
+  :root {
+    --bg: #12111a;
+    --surface: #1e1c2e;
+    --surface2: #272440;
+    --accent: #b49dde;
+    --accent2: #e8a0bf;
+    --text: #e8e4f0;
+    --text-sub: #9b95b8;
+    --border: #3a3560;
+    --new-badge: #4caf84;
+    --port-badge: #5b9bd5;
+    --remaster-badge: #e0a855;
+    --spin-badge: #d47faa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; line-height: 1.6; }
+
+  header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .header-title { font-size: 18px; font-weight: bold; color: var(--accent); }
+  .header-sub { font-size: 12px; color: var(--text-sub); }
+  .update-time { font-size: 11px; color: var(--text-sub); background: var(--surface2); padding: 4px 10px; border-radius: 20px; }
+
+  main { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+  section { margin-bottom: 40px; }
+  .section-title { font-size: 16px; font-weight: bold; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 10px; margin-bottom: 16px; }
+
+  /* Tweets */
+  .tweet-list { display: flex; flex-direction: column; gap: 12px; }
+  .tweet-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; transition: border-color 0.2s; }
+  .tweet-card:hover { border-color: var(--accent); }
+  .tweet-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .tweet-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .tweet-author { font-size: 13px; font-weight: bold; color: var(--accent); }
+  .tweet-time { font-size: 11px; color: var(--text-sub); margin-left: auto; }
+  .tweet-text { font-size: 14px; white-space: pre-wrap; word-break: break-all; color: var(--text); line-height: 1.7; }
+  .tweet-images { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .tweet-images img { max-width: 240px; border-radius: 8px; }
+  .tweet-link { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--accent); text-decoration: none; }
+  .tweet-link:hover { text-decoration: underline; }
+
+  /* Game list */
+  .game-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .game-table th { background: var(--surface2); color: var(--text-sub); font-weight: normal; padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  .game-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .game-table tr:hover td { background: var(--surface); }
+  .game-date { color: var(--accent2); font-weight: bold; white-space: nowrap; }
+  .game-title { font-weight: bold; color: var(--text); }
+  .game-dev { color: var(--text-sub); font-size: 12px; }
+  .badge { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 11px; font-weight: bold; }
+  .badge-new { background: #1e3d2f; color: var(--new-badge); }
+  .badge-port { background: #1e2f3d; color: var(--port-badge); }
+  .badge-remaster { background: #3d2f1e; color: var(--remaster-badge); }
+  .badge-spin { background: #3d1e2d; color: var(--spin-badge); }
+
+  @media (max-width: 640px) {
+    .game-table th:nth-child(3), .game-table td:nth-child(3) { display: none; }
+    .tweet-images img { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="header-title">🎮 ゲーム情報ダッシュボード</div>
+    <div class="header-sub">りゅうみこ &amp; 乙女新作情報</div>
+  </div>
+  <div class="update-time" id="updateTime">更新中...</div>
+</header>
+
+<main>
+
+  <!-- りゅうみこ section -->
+  <section>
+    <div class="section-title">🌊 りゅうみこ (@haruka_ryugu) 最新情報</div>
+    <div class="tweet-list" id="tweetList">
+      <!-- tweets injected by JS -->
+    </div>
+  </section>
+
+  <!-- 乙女新作 section -->
+  <section>
+    <div class="section-title">🌸 乙女ゲーム発売予定 2026</div>
+    <table class="game-table">
+      <thead>
+        <tr>
+          <th>発売日</th>
+          <th>タイトル</th>
+          <th>機種</th>
+          <th>分類</th>
+        </tr>
+      </thead>
+      <tbody id="gameList">
+        <!-- games injected by JS -->
+      </tbody>
+    </table>
+    <div style="margin-top:10px;font-size:11px;color:var(--text-sub)">出典: <a href="https://w.atwiki.jp/girlgame/pages/507.html" style="color:var(--accent)" target="_blank">乙女ゲームまとめ @ ウィキ</a></div>
+  </section>
+
+</main>
+
+<script>
+const TWEETS = [
+  {
+    text: "【運営】\n神子さま、よろず屋のマンボウです！今日のお昼はなんですか？おいらは、茶寮で梅のおにぎりをいただいたよ。\n\nところで、ダリウスさんの召喚が、\n本日　2026年5月11日(月)23:55まで！\nお見逃しなく！",
+    time: "2026-05-11T03:00:03.000Z",
+    url: "https://x.com/haruka_ryugu/status/2053671448846254509",
+    images: ["https://pbs.twimg.com/media/HHIaEdOb0AACcZn?format=jpg&name=medium"]
+  },
+  {
+    text: "【リマインド】\n「ダリウス」登場記念 投稿キャンペーン開催中\n\n応募〆切は【5/11(月) 23:59】まで！\n指定ハッシュタグ「#りゅうみこダリウス登場」を付けて感想を投稿してね♪\n\n5/11までのログインでSRダリウスがもらえる✨",
+    time: "2026-05-09T09:00:02.000Z",
+    url: "https://x.com/haruka_ryugu/status/2053037265769713840",
+    images: ["https://pbs.twimg.com/media/HG-wVv0a4AApJ5H?format=jpg&name=medium"]
+  },
+  {
+    text: "【運営】\n神子さま、よろず屋のマンボウです！\n今日は土曜日ですけど、神子さまは今、なにをしていらっしゃるのかな……\n\nところで、今日は桜霞の世界からいらした源 頼朝さまのお誕生日ですよ！おめでとうございます🎂",
+    time: "2026-05-09T03:00:01.000Z",
+    url: "https://x.com/haruka_ryugu/status/2052946664940241328",
+    images: ["https://pbs.twimg.com/media/HHIZww2a0AAlenL?format=jpg&name=medium"]
+  }
+];
+
+const GAMES = [
+  { date: "5/28", title: "Starry☆Sky〜Spring Memories〜", platform: "Switch", type: "移植", dev: "arithmetic／dramatic create" },
+  { date: "6/25", title: "Blackish House ←sideZ -Retour-", platform: "Switch", type: "移植", dev: "arithmetic／EDIA" },
+  { date: "7/9", title: "CRAZY CHA!N -エルピスの鎖-", platform: "Switch", type: "新作", dev: "アイディアファクトリー" },
+  { date: "7/23", title: "ソラ*ユメ", platform: "Switch", type: "移植", dev: "TAKUYO" },
+  { date: "7/30", title: "君に惑い、君に溺れる。", platform: "Switch", type: "新作", dev: "アイディアファクトリー" },
+  { date: "7/30", title: "テニスの王子様 も～っと 学園祭の王子様 ♡", platform: "Switch", type: "リマスター", dev: "コナミ" },
+  { date: "7/30", title: "テニスの王子様 ぎゅ～っと! ドキドキサバイバル Tie break ♡", platform: "Switch", type: "リマスター", dev: "コナミ" },
+  { date: "8/20", title: "あやかしごはん ～おかわりっ!～ for S", platform: "Switch", type: "移植", dev: "arithmetic／EDIA" },
+  { date: "8/27", title: "薄桜鬼異聞 ベレジンスキーの魔女", platform: "Switch", type: "スピンオフ", dev: "アイディアファクトリー" },
+  { date: "9/10", title: "BLACK WOLVES SAGA-Weiβ und Schwarz- for Switch", platform: "Switch", type: "移植", dev: "Rejet／アイディアファクトリー" },
+  { date: "9/17", title: "Le Mirage Mystique (ル ミラージュ ミスティーク)", platform: "Switch", type: "新作", dev: "ブロッコリー／ティズクリエイション" },
+  { date: "10/1", title: "Sullyland Nursery Rhyme", platform: "Switch", type: "新作", dev: "アイディアファクトリー" },
+  { date: "未定", title: "夕刻の町のグロブスター", platform: "Switch", type: "新作", dev: "TAKUYO" },
+  { date: "未定", title: "百目ノ花贄", platform: "Switch", type: "新作", dev: "神海処／リベロエンジニア" },
+  { date: "未定", title: "ALICE＝ALICE ＆ BAD MEDICINE 2in1 PACK", platform: "Switch/Switch2", type: "移植", dev: "Rejet" },
+  { date: "未定", title: "MIX DUNK -KING OF BASKETBALL-", platform: "Switch", type: "新作", dev: "VISUALNOTES.／アイディアファクトリー" },
+  { date: "未定", title: "明治東亰恋伽 トワヰライト・キス", platform: "Switch", type: "移植", dev: "dramatic create" },
+];
+
+function badgeClass(type) {
+  if (type === '新作') return 'badge badge-new';
+  if (type === '移植') return 'badge badge-port';
+  if (type === 'リマスター') return 'badge badge-remaster';
+  return 'badge badge-spin';
+}
+
+function formatTime(iso) {
+  const d = new Date(iso);
+  return `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
+
+// Render tweets
+const tweetList = document.getElementById('tweetList');
+TWEETS.forEach(t => {
+  const imgs = t.images.map(src => `<img src="${src}" alt="" loading="lazy">`).join('');
+  tweetList.innerHTML += `
+    <div class="tweet-card">
+      <div class="tweet-meta">
+        <div class="tweet-avatar">🌊</div>
+        <span class="tweet-author">@haruka_ryugu</span>
+        <span class="tweet-time">${formatTime(t.time)}</span>
+      </div>
+      <div class="tweet-text">${t.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+      ${imgs ? `<div class="tweet-images">${imgs}</div>` : ''}
+      <a class="tweet-link" href="${t.url}" target="_blank">→ Xで見る</a>
+    </div>`;
+});
+
+// Render games
+const gameList = document.getElementById('gameList');
+GAMES.forEach(g => {
+  gameList.innerHTML += `
+    <tr>
+      <td class="game-date">${g.date}</td>
+      <td><div class="game-title">${g.title}</div><div class="game-dev">${g.dev}</div></td>
+      <td style="color:var(--text-sub);font-size:12px">${g.platform}</td>
+      <td><span class="${badgeClass(g.type)}">${g.type}</span></td>
+    </tr>`;
+});
+
+// Update time
+document.getElementById('updateTime').textContent = '最終更新: ' + formatTime(new Date().toISOString());
+</script>
+</body>
+</html>
