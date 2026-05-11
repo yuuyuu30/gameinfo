@@ -1,33 +1,62 @@
 {
-  "updated": "2026-05-11T10:22:09.566Z",
+  "updated": "2026-05-11T11:49:20.202Z",
   "ryugu": {
-    "eventCalendar": [
-      {
-        "title": "ログイン＆投稿CP",
-        "desc": "5/11までログインでSRダリウス＆投稿CP",
-        "date": "2026-05-11",
-        "url": "https://x.com/haruka_ryugu/status/2049051202143613325/photo/1"
-      }
-    ],
-    "gachaPickup": [
-      {
-        "title": "ダリウス召喚終了",
-        "desc": "ダリウス召喚は5/11 23:55まで",
-        "date": "2026-05-11",
-        "url": "https://x.com/haruka_ryugu/status/2053671448846254509/photo/1"
-      }
-    ],
+    "gachaPickup": [],
     "newEvents": [],
     "maintenance": [
       {
         "title": "不具合報告",
-        "desc": "メール一括開封など不具合3件",
-        "date": "",
+        "desc": "複数の不具合を確認",
+        "date": "2026-05-08",
         "url": "https://x.com/haruka_ryugu/status/2052660292044423583"
       }
     ],
     "goods": [],
-    "sequel": []
+    "sequel": [],
+    "eventCalendar": [
+      {
+        "title": "夢現の逢瀬 動物園編",
+        "desc": "2026年5月12日(火)15:00 ~6月8日(月)23:59まで",
+        "date": "2026年5月12日(火)15:00 ~6月8日(月)23:59まで",
+        "url": "https://gamewith.jp/haruka-ryugu/533785"
+      },
+      {
+        "title": "源 頼朝 生誕祭2026",
+        "desc": "5月12日(火)23:59",
+        "date": "5月12日(火)23:59",
+        "url": "https://gamewith.jp/haruka-ryugu/533785#h3-2-1778053042272"
+      },
+      {
+        "title": "春暁の川辺 ミッションパス",
+        "desc": "5月18日(月)23:59まで",
+        "date": "5月18日(月)23:59",
+        "url": "https://gamewith.jp/haruka-ryugu/533785#h3-2-1776678662017"
+      },
+      {
+        "title": "時空の浮橋イベント",
+        "desc": "5月11日(月)23:59",
+        "date": "5月11日(月)23:59",
+        "url": "https://gamewith.jp/haruka-ryugu/533785#h3-1-1775529016708"
+      },
+      {
+        "title": "時空の浮橋 ミッションパス",
+        "desc": "5月11日(月)23:59まで",
+        "date": "5月11日(月)23:59",
+        "url": "https://gamewith.jp/haruka-ryugu/533785#h3-2-1774884670148"
+      },
+      {
+        "title": "高禍原週間バトル",
+        "desc": "週替わりで開催",
+        "date": "週替わりで開催",
+        "url": "https://gamewith.jp/haruka-ryugu/533785#h3-4-1765281030432"
+      },
+      {
+        "title": "初心者ミッションパス",
+        "desc": "ゲーム開始から14日間",
+        "date": "ゲーム開始から14日間",
+        "url": "https://gamewith.jp/haruka-ryugu/533785#h3-8-1765281030432"
+      }
+    ]
   },
   "games": {
     "@CC_otomate": {
