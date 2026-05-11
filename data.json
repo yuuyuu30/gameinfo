@@ -1,61 +1,61 @@
 {
-  "updated": "2026-05-11T08:00:00.000Z",
+  "updated": "2026-05-11T09:38:44.116Z",
   "ryugu": [
     {
       "type": "event",
-      "text": "【運営】\n神子さま、よろず屋のマンボウです！今日のお昼はなんですか？おいらは、茶寮で梅のおにぎりをいただいたよ。\n\nところで、ダリウスさんの召喚が、\n本日　2026年5月11日(月)23:55まで！\nお見逃しなく！",
+      "text": "【運営】\n神子さま、よろず屋のマンボウです！今日のお昼はなんですか？おいらは、茶寮で梅のおにぎりをいただいたよ。すっぱくって、きゅう～っとなったけど、一緒に食べてたタコ助さんも、いつもより口をすぼめてました！\n\nところで、ダリウスさんの召喚が、\n\n本日　2026年5月11日(月)23:55",
       "date": "2026-05-11",
-      "url": "https://x.com/haruka_ryugu/status/2053671448846254509"
+      "url": "https://x.com/haruka_ryugu/status/2053671448846254509/photo/1"
     },
     {
       "type": "campaign",
-      "text": "【リマインド】\n「ダリウス」登場記念 投稿キャンペーン開催中\n\n応募〆切は【5/11(月) 23:59】まで！\n指定ハッシュタグ「#りゅうみこダリウス登場」を付けて感想を投稿してね♪\n\n5/11までのログインでSRダリウスがもらえる✨",
+      "text": "【リマインド】\n「ダリウス」登場記念\n投稿キャンペーン開催中\n\n本キャンペーンの応募〆切は【5/11(月) 23:59】まで！\n指定のハッシュタグ「#りゅうみこダリウス登場」を付けて、イベントの感想など投稿してくださいね♪\n\n5/11までの #りゅうみこ ログインでSRダリウスがもらえる\nお見逃しなく！",
       "date": "2026-05-09",
-      "url": "https://x.com/haruka_ryugu/status/2053037265769713840"
-    },
-    {
-      "type": "bug",
-      "text": "【不具合のお知らせ】以下の不具合を確認しています：\n① メール一括開封の不具合\n② 土方SSR 術説明テキストの誤り\n③ 自動編成での特効優先処理の不具合\n順次対応中です。ご迷惑をおかけします。",
-      "date": "2026-05-08",
-      "url": "https://x.com/haruka_ryugu"
+      "url": "https://x.com/haruka_ryugu/status/2049051202143613325/photo/1"
     },
     {
       "type": "birthday",
-      "text": "今日は桜霞の世界からいらした源 頼朝さまのお誕生日ですよ！おめでとうございます🎂",
+      "text": "【運営】\n神子さま、よろず屋のマンボウです！\n今日は土曜日ですけど、神子さまは今、なにをしていらっしゃるのかな……おいらはさっき、友達のニシキアナゴとウニといっしょに、あんみつを食べたよ！\n\nところで、今日は桜霞の世界からいらした源 頼朝さまのお誕生日でしょう？",
       "date": "2026-05-09",
-      "url": "https://x.com/haruka_ryugu/status/2052946664940241328"
+      "url": "https://x.com/haruka_ryugu/status/2052946664940241328/photo/1"
+    },
+    {
+      "type": "bug",
+      "text": "【運営】【不具合報告】\n現在、以下の不具合を確認しております。\n\n・メールの一括開封が実行できない場合がある\n・SSR 土方歳三「ぬるま湯の攻防」の術の説明文と実際の効果が合致していない\n・自動編成で特効優先を選択しても、特効があるカードが編成されない場合がある",
+      "date": "2026-05-08",
+      "url": "https://x.com/haruka_ryugu/status/2052660292044423583"
     }
   ],
   "games": {
     "@CC_otomate": {
-      "latestText": "カードゲーム×乙女のシステム紹介中。発売まで段階的に情報解禁予定。 #クレチェン",
-      "date": "2026-05-10",
-      "url": "https://x.com/CC_otomate"
+      "latestText": "【PRODUCT】\n『CRAZY CHA!N -エルピスの鎖-』\n\n￣￣￣￣￣￣￣￣￣￣￣￣￣\n\n　    2026年7月9日 発売予定\n\n　　　　予約受付中！\n\n＿＿＿＿＿＿＿＿＿＿＿＿＿\n\n公式サイトで様々な情報をお届けしていますので\nぜひチェックしてください\n\nURL：\nhttps://\notomate.jp/crazy_chain/\n#オトメイト #クレチェン",
+      "date": "2026-04-14",
+      "url": "https://x.com/CC_otomate/status/2043887466743246950/photo/1"
     },
     "@KK_otomate": {
-      "latestText": "CG解禁・キャラPV公開中。発売日に向けて情報強化中。 #わくでき",
-      "date": "2026-05-10",
-      "url": "https://x.com/KK_otomate"
+      "latestText": "キャラクター情報\n\n棗 陽凪　　　CV：#千葉翔也\n瀬尾 叶多　　CV：#堀江瞬\n日下部 恭也　CV：#熊谷健太郎\n露木 理都　　CV：#大塚剛央\n山科 瑛　　　CV：#小林千晃\n\n#わくでき　#オトメイト",
+      "date": "2026-02-15",
+      "url": "https://x.com/KK_otomate/status/2023012090815132103/photo/1"
     },
     "@WitchB_otomate": {
-      "latestText": "5/11〜5/15の週、毎日「愛のテーマ＋キャラCV」を公開中。 #ベレ魔女",
-      "date": "2026-05-11",
-      "url": "https://x.com/WitchB_otomate"
+      "latestText": "予約受付開始！\n\nNintendo Switch用ソフト\n薄桜鬼異聞 ベレジンスキーの魔女\n\n✦2026年8月27日 発売予定✦\n￣￣￣￣￣￣￣￣￣￣￣￣￣\n「それ」は――\n　　彼女を天使にも悪魔にもする\n\n特典情報はこちら\n\nhttps://\notomate.jp/witch_bere/pro\nduct/\n…\n\n#オトメイト #ベレ魔女 #薄桜鬼",
+      "date": "2026-02-16",
+      "url": "https://x.com/WitchB_otomate/status/2023237216403865940/photo/1"
     },
     "@Le_Mirage_jp": {
-      "latestText": "予約キャンペーン終了（5/10）。全国店舗特典確定、次の情報解禁待ち。 #ミラミス",
-      "date": "2026-05-10",
-      "url": "https://x.com/Le_Mirage_jp"
+      "latestText": "美しいその島で　少女は目にする\n　恐ろしい“奇跡”を――\n\nNintendo Switch用ソフト\n『Le Mirage Mystique（ル ミラージュ ミスティーク）』\n2026年9月17日(木)発売\n\n公式サイトがオープンしました\n\nhttps://\nlicobits-game.com/mirage/\n\n#ミラミス #LicoBiTs",
+      "date": "2026-04-28",
+      "url": "https://x.com/Le_Mirage_jp/status/2048930210817716714/photo/1"
     },
     "@SN_otomate": {
-      "latestText": "イベントCG解禁が順次進行中。 #サリライ",
-      "date": "2026-05-09",
-      "url": "https://x.com/SN_otomate"
+      "latestText": "🅸🅽🅵\n\n✦Nintendo Switch新作タイトル\n『Sullyland Nursery Rhyme』\n\n2026年10月1日発売予定\n\n#サリライ　#オトメイト",
+      "date": "2026-05-06",
+      "url": "https://x.com/SN_otomate/status/2051955126722568475/photo/1"
     },
     "@takuyo_jolly": {
-      "latestText": "専用アカウントなし。TAKUYO公式より。2025年11月以降更新なし。",
-      "date": "2025-11-01",
-      "url": "https://x.com/takuyo_jolly"
+      "latestText": "【お誕生日のオトモダチ】\n五男「今月は『カエル畑ＤＥつかまえて☆彡』の『戸神明杜（とがみあきもり）』お兄さん。七不思議に対して『世界は不思議で溢れてる、七つで収まるはずがない』って返しは最高だよね！明杜お兄さん、はっぴーたくよー☆アイコンは自由に持ち帰ってねー」\n#はっぴーたくよー",
+      "date": "2026-05-09",
+      "url": "https://x.com/takuyo_jolly/status/2052946662000361827/photo/1"
     }
   }
 }
