@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[object Object]<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -49,16 +49,22 @@ main{max-width:900px;margin:0 auto;padding:0 24px 80px}
 .sh-ttl{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px}
 .sh-sub{font-size:11px;color:var(--dim)}
 
-.sum-list{border-top:1px solid var(--border)}
-.sum-row{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
-.sum-row:hover{background:var(--s1)}
-.st{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding-top:3px}
-.st.ev{color:var(--event)}.st.bg{color:var(--bug)}.st.cp{color:var(--campaign)}.st.bd{color:var(--birthday)}.st.if{color:var(--dim)}
-.sn{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px}
-.sd{font-size:12px;color:var(--dim);line-height:1.75}
-.sdm{font-size:10px;color:var(--dimmer);margin-top:5px}
-.src{font-size:10px;color:var(--link);margin-top:5px;letter-spacing:.05em;display:inline-block}
-.src:hover{text-decoration:underline;color:var(--link-h)}
+/* category blocks */
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
+.cat-block{border:1px solid var(--border);padding:16px}
+.cat-block:hover{border-color:var(--border2)}
+.cat-lbl{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px}
+.cat-lbl.ev{color:var(--event)}.cat-lbl.gp{color:var(--campaign)}.cat-lbl.up{color:var(--bug)}.cat-lbl.gd{color:var(--birthday)}
+.cat-item{padding:10px 0;border-bottom:1px solid var(--border)}
+.cat-item:last-child{border-bottom:none;padding-bottom:0}
+.ci-title{font-size:12px;font-weight:700;color:var(--white);margin-bottom:3px}
+.ci-desc{font-size:11px;color:var(--dim);line-height:1.7}
+.ci-foot{display:flex;align-items:center;gap:12px;margin-top:5px}
+.ci-date{font-size:10px;color:var(--event)}
+.ci-src{font-size:10px;color:var(--link)}
+.ci-src:hover{text-decoration:underline;color:var(--link-h)}
+.cat-empty{font-size:11px;color:var(--dimmer);font-style:italic;padding:8px 0}
+@media(max-width:620px){.cat-grid{grid-template-columns:1fr}}
 
 .g-hdr{display:grid;grid-template-columns:66px 1fr 200px;gap:16px;padding:0 0 10px;border-bottom:1px solid var(--border2);font-size:9px;letter-spacing:.4em;color:var(--dim);text-transform:uppercase}
 .g-list{border-top:1px solid var(--border);margin-top:12px}
@@ -116,11 +122,11 @@ main{max-width:900px;margin:0 auto;padding:0 24px 80px}
     <div class="sh-ttl">りゅうみこ</div>
     <div class="sh-sub">@haruka_ryugu — 遙かなる時空の中で 龍宮の神子</div>
   </div>
-  <div class="sum-list" id="ryuguList">
-    <div class="sum-row">
-      <div class="st if">—</div>
-      <div><div class="sd">データ読み込み中...</div></div>
-    </div>
+  <div class="cat-grid" id="ryuguGrid">
+    <div class="cat-block"><div class="cat-lbl ev">活動カレンダー</div><div class="cat-empty">読み込み中...</div></div>
+    <div class="cat-block"><div class="cat-lbl gp">カードプール</div><div class="cat-empty">読み込み中...</div></div>
+    <div class="cat-block"><div class="cat-lbl up">新着情報</div><div class="cat-empty">読み込み中...</div></div>
+    <div class="cat-block"><div class="cat-lbl gd">グッズ情報</div><div class="cat-empty">読み込み中...</div></div>
   </div>
 </div>
 
@@ -158,24 +164,30 @@ const GAMES=[
 ];
 
 const tc={新作:'tn',移植:'tp',リマスター:'tr',スピンオフ:'ts'};
-const tMap={event:'ev',bug:'bg',campaign:'cp',birthday:'bd',info:'if'};
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-function renderRyugu(tweets){
-  const el=document.getElementById('ryuguList');
-  if(!tweets||!tweets.length){
-    el.innerHTML='<div class="sum-row"><div class="st if">—</div><div><div class="sd">データなし</div></div></div>';
-    return;
-  }
-  el.innerHTML=tweets.map(t=>`<div class="sum-row">
-  <div class="st ${tMap[t.type]||'if'}">${esc(t.type||'info')}</div>
-  <div>
-    <div class="sd">${esc(t.text).replace(/\n/g,'<br>')}</div>
-    <div class="sdm">${esc(t.date||'')}</div>
-    <a class="src" href="${esc(t.url)}" target="_blank" rel="noopener">→ ソースを見る</a>
-  </div>
-</div>`).join('');
+const CATS=[
+  {key:'activeEvents',lbl:'活動カレンダー',cls:'ev'},
+  {key:'gachaPool',lbl:'カードプール',cls:'gp'},
+  {key:'updates',lbl:'新着情報',cls:'up'},
+  {key:'goods',lbl:'グッズ情報',cls:'gd'}
+];
+
+function renderRyugu(ryugu){
+  const grid=document.getElementById('ryuguGrid');
+  grid.innerHTML=CATS.map(c=>{
+    const items=(ryugu&&ryugu[c.key])||[];
+    const body=items.length
+      ?items.map(it=>`<div class="cat-item">
+  <div class="ci-title">${esc(it.title||'')}</div>
+  <div class="ci-desc">${esc(it.desc||'')}</div>
+  <div class="ci-foot">${it.date?`<span class="ci-date">${esc(it.date)}</span>`:''
+  }${it.url?`<a class="ci-src" href="${esc(it.url)}" target="_blank" rel="noopener">→ ソース</a>`:''}</div>
+</div>`).join('')
+      :`<div class="cat-empty">情報なし</div>`;
+    return `<div class="cat-block"><div class="cat-lbl ${c.cls}">${c.lbl}</div>${body}</div>`;
+  }).join('');
 }
 
 function renderGames(gd){
@@ -217,16 +229,16 @@ fetch('./data.json?_='+Date.now())
   .then(r=>r.ok?r.json():null)
   .then(data=>{
     if(!data){
-      renderRyugu(null);
+      renderRyugu({});
       document.getElementById('hMeta').textContent='データ取得中...';
       return;
     }
-    renderRyugu(data.ryugu);
+    renderRyugu(data.ryugu || {});
     renderGames(data.games);
     document.getElementById('hMeta').textContent='最終更新 '+fmtDate(data.updated);
   })
   .catch(()=>{
-    renderRyugu(null);
+    renderRyugu({});
     document.getElementById('hMeta').textContent='——';
   });
 </script>
