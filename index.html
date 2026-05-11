@@ -9,188 +9,184 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#000;
-  --s1:#080808;
-  --border:#1c1c1c;
-  --border2:#303030;
-  --text:#c8c8c8;
-  --dim:#505050;
-  --dimmer:#282828;
-  --white:#f0f0f0;
-  --event:#c8a84b;
-  --bug:#c85050;
-  --campaign:#4bc8a8;
-  --birthday:#9b6bd8;
-  --new:#4b9b5b;
-  --port:#4b6b9b;
-  --remaster:#9b7040;
-  --spin:#9b4b6b;
-  --dot-color:#141414;
-  --tw-link:#5b8ec8;
-  --tw-link-hover:#7aaee8;
+  --bg:#000;--s1:#080808;--border:#1c1c1c;--border2:#303030;
+  --text:#c8c8c8;--dim:#505050;--dimmer:#282828;--white:#f0f0f0;
+  --event:#c8a84b;--bug:#c85050;--campaign:#4bc8a8;--birthday:#9b6bd8;
+  --new:#4b9b5b;--port:#4b6b9b;--remaster:#9b7040;--spin:#9b4b6b;
+  --dot:#141414;--link:#5b8ec8;--link-h:#7aaee8;
 }
 [data-theme="light"]{
-  --bg:#f8f8f6;
-  --s1:#f0f0ed;
-  --border:#e0e0db;
-  --border2:#c8c8c0;
-  --text:#2a2a2a;
-  --dim:#888880;
-  --dimmer:#c8c8c0;
-  --white:#0a0a0a;
-  --event:#9b7a20;
-  --bug:#b03030;
-  --campaign:#208060;
-  --birthday:#6b3db0;
-  --new:#2a6b3a;
-  --port:#2a4b7b;
-  --remaster:#7b5020;
-  --spin:#7b2a4b;
-  --dot-color:#e0e0da;
-  --tw-link:#2a5b9b;
-  --tw-link-hover:#1a4080;
+  --bg:#f8f8f6;--s1:#f0f0ed;--border:#e0e0db;--border2:#c8c8c0;
+  --text:#2a2a2a;--dim:#888880;--dimmer:#c8c8c0;--white:#0a0a0a;
+  --event:#8b6010;--bug:#a02828;--campaign:#18705a;--birthday:#5b2da0;
+  --new:#1a5a28;--port:#1a3a6b;--remaster:#6b4018;--spin:#6b1a3a;
+  --dot:#e0e0da;--link:#1a4b8b;--link-h:#0a3070;
 }
+
 body{background:var(--bg);color:var(--text);font-family:'Space Mono','Courier New',monospace;font-size:13px;line-height:1.7;transition:background .2s,color .2s}
 a{color:inherit;text-decoration:none}
 
 /* ── header ── */
-header{
-  background-image:radial-gradient(circle,var(--dot-color) 1px,transparent 1px);
-  background-size:16px 16px;
-  padding:40px 24px 30px;
-  border-bottom:1px solid var(--border2);
-}
-.h-inner{max-width:880px;margin:0 auto}
-.h-eyebrow{font-size:10px;color:var(--dim);letter-spacing:.5em;text-transform:uppercase;margin-bottom:10px}
-.h-title{font-size:22px;font-weight:700;color:var(--white);letter-spacing:.02em}
-.h-sub{font-size:11px;color:var(--dim);margin-top:10px;letter-spacing:.05em}
-.h-row{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
-.theme-btn{
-  font-family:inherit;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--dim);background:transparent;border:1px solid var(--border2);
-  padding:5px 12px;cursor:pointer;transition:color .15s,border-color .15s;white-space:nowrap;flex-shrink:0;
-}
+header{background-image:radial-gradient(circle,var(--dot) 1px,transparent 1px);background-size:16px 16px;padding:32px 24px 22px;border-bottom:1px solid var(--border2)}
+.h-wrap{max-width:900px;margin:0 auto}
+.h-eye{font-size:10px;color:var(--dim);letter-spacing:.5em;text-transform:uppercase;margin-bottom:8px}
+.h-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.h-title{font-size:20px;font-weight:700;color:var(--white);letter-spacing:.02em}
+.h-meta{font-size:11px;color:var(--dim);margin-top:8px}
+.theme-btn{font-family:inherit;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid var(--border2);padding:5px 12px;cursor:pointer;white-space:nowrap;flex-shrink:0}
 .theme-btn:hover{color:var(--white);border-color:var(--text)}
 
-/* ── layout ── */
-main{max-width:880px;margin:0 auto;padding:0 24px 80px}
-section{padding:40px 0;border-bottom:1px solid var(--border)}
-.s-num{font-size:10px;color:var(--dim);letter-spacing:.4em;text-transform:uppercase;margin-bottom:3px}
-.s-title{font-size:15px;font-weight:700;color:var(--white);letter-spacing:.04em;margin-bottom:2px}
-.s-sub{font-size:11px;color:var(--dim);margin-bottom:28px}
+/* ── tabs ── */
+.tab-bar{background:var(--bg);border-bottom:1px solid var(--border2);position:sticky;top:0;z-index:100;transition:background .2s;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab-btn{font-family:inherit;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);background:transparent;border:none;border-bottom:2px solid transparent;padding:13px 18px 11px;cursor:pointer;white-space:nowrap;margin-bottom:-1px;transition:color .15s}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.on{color:var(--white);border-bottom-color:var(--white)}
 
-/* ── summary list (りゅうみこ) ── */
-.sum-list{display:flex;flex-direction:column;border-top:1px solid var(--border)}
-.sum-row{display:grid;grid-template-columns:100px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--border)}
-.sum-row:hover{background:var(--s1);padding-left:6px;margin-left:-6px;transition:padding .1s,margin .1s}
-.s-type{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding-top:3px;white-space:nowrap}
-.s-type.event{color:var(--event)}
-.s-type.bug{color:var(--bug)}
-.s-type.campaign{color:var(--campaign)}
-.s-type.birthday{color:var(--birthday)}
-.s-name{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px}
-.s-desc{font-size:12px;color:var(--dim);line-height:1.75}
-.s-date{font-size:10px;color:var(--dimmer);margin-top:6px;letter-spacing:.05em}
+/* ── panel ── */
+.panel{display:none}
+.panel.on{display:block}
+main{max-width:900px;margin:0 auto;padding:0 24px 80px}
 
-/* ── games table ── */
-.g-head{display:grid;grid-template-columns:68px 1fr 210px;gap:16px;padding:0 0 10px;border-bottom:1px solid var(--border2);font-size:9px;letter-spacing:.4em;color:var(--dim);text-transform:uppercase}
-.g-list{display:flex;flex-direction:column;border-top:1px solid var(--border);margin-top:14px}
-.g-row{display:grid;grid-template-columns:68px 1fr 210px;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);align-items:start}
-.g-row:hover{background:var(--s1);padding-left:4px;margin-left:-4px;transition:padding .1s,margin .1s}
-.g-date{font-size:12px;font-weight:700;color:var(--white);white-space:nowrap}
-.g-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px}
-.g-dev{font-size:10px;color:var(--dim);margin-bottom:6px}
-.g-tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.g-tag{font-size:9px;letter-spacing:.15em;padding:1px 7px;border:1px solid}
-.tag-new{border-color:var(--new);color:var(--new)}
-.tag-port{border-color:var(--port);color:var(--port)}
-.tag-remaster{border-color:var(--remaster);color:var(--remaster)}
-.tag-spin{border-color:var(--spin);color:var(--spin)}
-.g-platform{font-size:10px;color:var(--dimmer)}
-.g-tw-handle{font-size:10px;color:var(--tw-link);display:block;margin-bottom:5px}
-.g-tw-handle:hover{text-decoration:underline;color:var(--tw-link-hover)}
-.g-tw-body{font-size:11px;color:var(--dim);line-height:1.75}
-.g-no-data{font-size:10px;color:var(--dimmer);font-style:italic}
+/* section head */
+.sh{padding:28px 0 20px}
+.sh-lbl{font-size:10px;color:var(--dim);letter-spacing:.4em;text-transform:uppercase;margin-bottom:3px}
+.sh-ttl{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px}
+.sh-sub{font-size:11px;color:var(--dim)}
 
-@media(max-width:640px){
-  .g-head{grid-template-columns:58px 1fr}
-  .g-head>:last-child{display:none}
-  .g-row{grid-template-columns:58px 1fr}
-  .g-row>:last-child{display:none}
-  .sum-row{grid-template-columns:80px 1fr;gap:12px}
+/* ── りゅうみこ rows ── */
+.sum-list{border-top:1px solid var(--border)}
+.sum-row{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);cursor:default}
+.sum-row:hover{background:var(--s1)}
+.st{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding-top:3px}
+.st.ev{color:var(--event)}.st.bg{color:var(--bug)}.st.cp{color:var(--campaign)}.st.bd{color:var(--birthday)}
+.sn{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px}
+.sd{font-size:12px;color:var(--dim);line-height:1.75}
+.sdm{font-size:10px;color:var(--dimmer);margin-top:5px}
+.src{font-size:10px;color:var(--link);margin-top:5px;letter-spacing:.05em}
+.src:hover{text-decoration:underline;color:var(--link-h)}
+
+/* ── game rows ── */
+.g-hdr{display:grid;grid-template-columns:66px 1fr 200px;gap:16px;padding:0 0 10px;border-bottom:1px solid var(--border2);font-size:9px;letter-spacing:.4em;color:var(--dim);text-transform:uppercase}
+.g-list{border-top:1px solid var(--border);margin-top:12px}
+.g-row{display:grid;grid-template-columns:66px 1fr 200px;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);align-items:start}
+.g-row:hover{background:var(--s1)}
+.gd{font-size:12px;font-weight:700;color:var(--white);white-space:nowrap}
+.gt{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px}
+.gdev{font-size:10px;color:var(--dim);margin-bottom:6px}
+.gtags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.gtag{font-size:9px;letter-spacing:.12em;padding:1px 7px;border:1px solid}
+.tn{border-color:var(--new);color:var(--new)}.tp{border-color:var(--port);color:var(--port)}
+.tr{border-color:var(--remaster);color:var(--remaster)}.ts{border-color:var(--spin);color:var(--spin)}
+.gpf{font-size:10px;color:var(--dimmer)}
+.g-tw{}
+.gh{font-size:10px;color:var(--link);display:block;margin-bottom:4px}
+.gh:hover{text-decoration:underline;color:var(--link-h)}
+.gb{font-size:11px;color:var(--dim);line-height:1.75}
+.gsrc{font-size:10px;color:var(--link);display:block;margin-top:6px;letter-spacing:.05em}
+.gsrc:hover{text-decoration:underline;color:var(--link-h)}
+.gnd{font-size:10px;color:var(--dimmer);font-style:italic}
+
+/* ── mobile ── */
+@media(max-width:620px){
+  header{padding:24px 16px 18px}
+  .tab-bar{padding:0 12px}
+  main{padding:0 16px 60px}
+  .sum-row{grid-template-columns:76px 1fr;gap:12px}
+  .g-hdr{display:none}
+  .g-row{
+    grid-template-columns:56px 1fr;
+    grid-template-rows:auto auto;
+    row-gap:0;
+  }
+  .g-tw{
+    grid-column:1 / -1;
+    padding-top:10px;
+    margin-top:2px;
+    border-top:1px dashed var(--border2);
+  }
 }
 </style>
 </head>
 <body>
 
 <header>
-<div class="h-inner">
-  <div class="h-eyebrow">gameinfo · dashboard</div>
+<div class="h-wrap">
+  <div class="h-eye">gameinfo · dashboard</div>
   <div class="h-row">
     <div class="h-title">乙女ゲーム 情報</div>
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">light</button>
   </div>
-  <div class="h-sub" id="hSub">——</div>
+  <div class="h-meta" id="hMeta">——</div>
 </div>
 </header>
 
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn on" onclick="sw(0)">りゅうみこ</button>
+  <button class="tab-btn" onclick="sw(1)">乙女新作</button>
+</div>
+
 <main>
 
-<!-- section 01 -->
-<section>
-  <div class="s-num">01</div>
-  <div class="s-title">りゅうみこ</div>
-  <div class="s-sub">@haruka_ryugu — 遙かなる時空の中で 龍宮の神子</div>
-
+<!-- Panel 0: りゅうみこ -->
+<div class="panel on" id="p0">
+  <div class="sh">
+    <div class="sh-lbl">01</div>
+    <div class="sh-ttl">りゅうみこ</div>
+    <div class="sh-sub">@haruka_ryugu — 遙かなる時空の中で 龍宮の神子</div>
+  </div>
   <div class="sum-list">
     <div class="sum-row">
-      <div class="s-type event">event</div>
+      <div class="st ev">event</div>
       <div>
-        <div class="s-name">ダリウス「時空の浮橋」</div>
-        <div class="s-desc">本日 5/11 23:55 でイベント終了。SRダリウスのログインボーナスも同時に終了。</div>
-        <div class="s-date">2026-05-11</div>
+        <div class="sn">ダリウス「時空の浮橋」</div>
+        <div class="sd">本日 5/11 23:55 でイベント終了。SRダリウスのログインボーナスも同時終了。</div>
+        <div class="sdm">2026-05-11</div>
+        <a class="src" href="https://x.com/haruka_ryugu/status/2053671448846254509" target="_blank">→ ソースを見る</a>
       </div>
     </div>
     <div class="sum-row">
-      <div class="s-type campaign">campaign</div>
+      <div class="st cp">campaign</div>
       <div>
-        <div class="s-name">ダリウス登場記念 投稿キャンペーン</div>
-        <div class="s-desc">#りゅうみこダリウス登場 を付けて感想を投稿で応募完了。〆切 5/11 23:59。</div>
-        <div class="s-date">2026-05-09</div>
+        <div class="sn">ダリウス登場記念 投稿キャンペーン</div>
+        <div class="sd">#りゅうみこダリウス登場 を付けて感想を投稿で応募完了。〆切 5/11 23:59。</div>
+        <div class="sdm">2026-05-09</div>
+        <a class="src" href="https://x.com/haruka_ryugu/status/2053037265769713840" target="_blank">→ ソースを見る</a>
       </div>
     </div>
     <div class="sum-row">
-      <div class="s-type bug">bug</div>
+      <div class="st bg">bug</div>
       <div>
-        <div class="s-name">不具合報告 3件</div>
-        <div class="s-desc">① メール一括開封　② 土方SSR 術説明テキスト誤り　③ 自動編成での特効優先処理</div>
-        <div class="s-date">2026-05-08</div>
+        <div class="sn">不具合報告 3件</div>
+        <div class="sd">① メール一括開封　② 土方SSR 術説明テキスト誤り　③ 自動編成での特効優先処理</div>
+        <div class="sdm">2026-05-08</div>
+        <a class="src" href="https://x.com/haruka_ryugu" target="_blank">→ @haruka_ryugu</a>
       </div>
     </div>
     <div class="sum-row">
-      <div class="s-type birthday">birthday</div>
+      <div class="st bd">birthday</div>
       <div>
-        <div class="s-name">源 頼朝 誕生日（桜霞の世界）</div>
-        <div class="s-desc">桜霞の世界キャラ。5月9日が誕生日。</div>
-        <div class="s-date">2026-05-09</div>
+        <div class="sn">源 頼朝 誕生日（桜霞の世界）</div>
+        <div class="sd">桜霞の世界キャラ。5月9日が誕生日。</div>
+        <div class="sdm">2026-05-09</div>
+        <a class="src" href="https://x.com/haruka_ryugu/status/2052946664940241328" target="_blank">→ ソースを見る</a>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- section 02 -->
-<section>
-  <div class="s-num">02</div>
-  <div class="s-title">2026 乙女ゲーム 発売予定</div>
-  <div class="s-sub">出典: <a href="https://w.atwiki.jp/girlgame/pages/507.html" target="_blank" style="color:#5b8ec8">乙女ゲームまとめ @ ウィキ</a></div>
-
-  <div class="g-head">
-    <span>発売日</span>
-    <span>タイトル</span>
-    <span>最新情報</span>
+<!-- Panel 1: 乙女新作 -->
+<div class="panel" id="p1">
+  <div class="sh">
+    <div class="sh-lbl">02</div>
+    <div class="sh-ttl">2026 乙女ゲーム 発売予定</div>
+    <div class="sh-sub">出典: <a href="https://w.atwiki.jp/girlgame/pages/507.html" target="_blank" style="color:var(--link)">乙女ゲームまとめ @ ウィキ</a></div>
+  </div>
+  <div class="g-hdr">
+    <span>発売日</span><span>タイトル</span><span>最新情報</span>
   </div>
   <div class="g-list" id="gList"></div>
-</section>
+</div>
 
 </main>
 
@@ -198,60 +194,45 @@ section{padding:40px 0;border-bottom:1px solid var(--border)}
 const GAMES=[
   {date:"5/28",title:"Starry☆Sky〜Spring Memories〜",platform:"Switch",type:"移植",dev:"arithmetic／dramatic create",handle:null,url:null,summary:null},
   {date:"6/25",title:"Blackish House ←sideZ -Retour-",platform:"Switch",type:"移植",dev:"arithmetic／EDIA",handle:null,url:null,summary:null},
-  {date:"7/9",title:"CRAZY CHA!N -エルピスの鎖-",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@CC_otomate",url:"https://twitter.com/CC_otomate",summary:"カードゲーム×乙女のシステム紹介中。発売まで段階的に情報解禁予定。 #クレチェン"},
+  {date:"7/9",title:"CRAZY CHA!N -エルピスの鎖-",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@CC_otomate",url:"https://x.com/CC_otomate",summary:"カードゲーム×乙女のシステム紹介中。発売まで段階的に情報解禁予定。 #クレチェン"},
   {date:"7/23",title:"ソラ*ユメ",platform:"Switch",type:"移植",dev:"TAKUYO",handle:null,url:null,summary:null},
-  {date:"7/30",title:"君に惑い、君に溺れる。",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@KK_otomate",url:"https://twitter.com/KK_otomate",summary:"CG解禁・キャラPV公開中。発売日に向けて情報強化中。 #わくでき"},
+  {date:"7/30",title:"君に惑い、君に溺れる。",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@KK_otomate",url:"https://x.com/KK_otomate",summary:"CG解禁・キャラPV公開中。発売日に向けて情報強化中。 #わくでき"},
   {date:"7/30",title:"テニスの王子様 も～っと 学園祭の王子様 ♡",platform:"Switch",type:"リマスター",dev:"コナミ",handle:null,url:null,summary:null},
   {date:"7/30",title:"テニスの王子様 ぎゅ～っと! ドキドキサバイバル Tie break ♡",platform:"Switch",type:"リマスター",dev:"コナミ",handle:null,url:null,summary:null},
   {date:"8/20",title:"あやかしごはん ～おかわりっ!～ for S",platform:"Switch",type:"移植",dev:"arithmetic／EDIA",handle:null,url:null,summary:null},
-  {date:"8/27",title:"薄桜鬼異聞 ベレジンスキーの魔女",platform:"Switch",type:"スピンオフ",dev:"アイディアファクトリー",handle:"@WitchB_otomate",url:"https://twitter.com/WitchB_otomate",summary:"5/11〜5/15の週、毎日「愛のテーマ＋キャラCV」を公開中。 #ベレ魔女"},
+  {date:"8/27",title:"薄桜鬼異聞 ベレジンスキーの魔女",platform:"Switch",type:"スピンオフ",dev:"アイディアファクトリー",handle:"@WitchB_otomate",url:"https://x.com/WitchB_otomate",summary:"5/11〜5/15の週、毎日「愛のテーマ＋キャラCV」を公開中。 #ベレ魔女"},
   {date:"9/10",title:"BLACK WOLVES SAGA for Switch",platform:"Switch",type:"移植",dev:"Rejet／アイディアファクトリー",handle:null,url:null,summary:null},
-  {date:"9/17",title:"Le Mirage Mystique",platform:"Switch",type:"新作",dev:"ブロッコリー／ティズクリエイション",handle:"@Le_Mirage_jp",url:"https://twitter.com/Le_Mirage_jp",summary:"予約キャンペーン終了（5/10）。全国店舗特典確定、次の情報解禁待ち。 #ミラミス"},
-  {date:"10/1",title:"Sullyland Nursery Rhyme",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@SN_otomate",url:"https://twitter.com/SN_otomate",summary:"イベントCG解禁が順次進行中。 #サリライ"},
-  {date:"未定",title:"夕刻の町のグロブスター",platform:"Switch",type:"新作",dev:"TAKUYO",handle:"@takuyo_jolly",url:"https://twitter.com/takuyo_jolly",summary:"専用アカウントなし。TAKUYO公式より。2025年11月以降更新なし。"},
+  {date:"9/17",title:"Le Mirage Mystique",platform:"Switch",type:"新作",dev:"ブロッコリー／ティズクリエイション",handle:"@Le_Mirage_jp",url:"https://x.com/Le_Mirage_jp",summary:"予約キャンペーン終了（5/10）。全国店舗特典確定、次の情報解禁待ち。 #ミラミス"},
+  {date:"10/1",title:"Sullyland Nursery Rhyme",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@SN_otomate",url:"https://x.com/SN_otomate",summary:"イベントCG解禁が順次進行中。 #サリライ"},
+  {date:"未定",title:"夕刻の町のグロブスター",platform:"Switch",type:"新作",dev:"TAKUYO",handle:"@takuyo_jolly",url:"https://x.com/takuyo_jolly",summary:"専用アカウントなし。TAKUYO公式より。2025年11月以降更新なし。"},
   {date:"未定",title:"百目ノ花贄",platform:"Switch",type:"新作",dev:"神海処／リベロエンジニア",handle:null,url:null,summary:null},
   {date:"未定",title:"ALICE=ALICE ＆ BAD MEDICINE 2in1",platform:"Switch/Switch2",type:"移植",dev:"Rejet",handle:null,url:null,summary:null},
   {date:"未定",title:"MIX DUNK -KING OF BASKETBALL-",platform:"Switch",type:"新作",dev:"VISUALNOTES.／アイディアファクトリー",handle:null,url:null,summary:null},
   {date:"未定",title:"明治東亰恋伽 トワヰライト・キス",platform:"Switch",type:"移植",dev:"dramatic create",handle:null,url:null,summary:null},
 ];
 
-const tagCls={新作:'tag-new',移植:'tag-port',リマスター:'tag-remaster',スピンオフ:'tag-spin'};
-
-const list=document.getElementById('gList');
+const tc={新作:'tn',移植:'tp',リマスター:'tr',スピンオフ:'ts'};
+const gl=document.getElementById('gList');
 GAMES.forEach(g=>{
   const tw=g.handle
-    ?`<a class="g-tw-handle" href="${g.url}" target="_blank">${g.handle}</a><div class="g-tw-body">${g.summary}</div>`
-    :`<span class="g-no-data">調査中</span>`;
-  list.innerHTML+=`<div class="g-row">
-  <div class="g-date">${g.date}</div>
-  <div>
-    <div class="g-title">${g.title}</div>
-    <div class="g-dev">${g.dev}</div>
-    <div class="g-tags"><span class="g-tag ${tagCls[g.type]||'tag-new'}">${g.type}</span><span class="g-platform">${g.platform}</span></div>
-  </div>
-  <div>${tw}</div>
-</div>`;
+    ?`<a class="gh" href="${g.url}" target="_blank">${g.handle}</a><div class="gb">${g.summary}</div><a class="gsrc" href="${g.url}" target="_blank">→ Xで確認</a>`
+    :`<span class="gnd">調査中</span>`;
+  gl.innerHTML+=`<div class="g-row"><div class="gd">${g.date}</div><div><div class="gt">${g.title}</div><div class="gdev">${g.dev}</div><div class="gtags"><span class="gtag ${tc[g.type]||'tn'}">${g.type}</span><span class="gpf">${g.platform}</span></div></div><div class="g-tw">${tw}</div></div>`;
 });
 
-document.getElementById('hSub').textContent='最終更新 '+new Date().toLocaleString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+function sw(i){
+  document.querySelectorAll('.tab-btn').forEach((b,j)=>b.classList.toggle('on',j===i));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('on',j===i));
+}
 
 function toggleTheme(){
-  const html=document.documentElement;
-  const btn=document.getElementById('themeBtn');
-  if(html.getAttribute('data-theme')==='light'){
-    html.removeAttribute('data-theme');
-    btn.textContent='light';
-    localStorage.setItem('theme','dark');
-  } else {
-    html.setAttribute('data-theme','light');
-    btn.textContent='dark';
-    localStorage.setItem('theme','light');
-  }
+  const h=document.documentElement,b=document.getElementById('themeBtn');
+  if(h.getAttribute('data-theme')==='light'){h.removeAttribute('data-theme');b.textContent='light';localStorage.setItem('t','d');}
+  else{h.setAttribute('data-theme','light');b.textContent='dark';localStorage.setItem('t','l');}
 }
-if(localStorage.getItem('theme')==='light'){
-  document.documentElement.setAttribute('data-theme','light');
-  document.getElementById('themeBtn').textContent='dark';
-}
+if(localStorage.getItem('t')==='l'){document.documentElement.setAttribute('data-theme','light');document.getElementById('themeBtn').textContent='dark';}
+
+document.getElementById('hMeta').textContent='最終更新 '+new Date().toLocaleString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
 </script>
 </body>
 </html>
