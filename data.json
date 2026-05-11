@@ -1,14 +1,46 @@
 {
-  "updated": "2026-05-11T11:49:20.202Z",
+  "updated": "2026-05-11T11:49:49.468Z",
   "ryugu": {
-    "gachaPickup": [],
-    "newEvents": [],
+    "gachaPickup": [
+      {
+        "title": "頼朝生誕祭ピックアップ",
+        "desc": "源頼朝の生誕祭ピックアップ召喚を開催",
+        "date": "2026-05-19",
+        "url": "https://x.com/haruka_ryugu/status/2050078007738388673"
+      }
+    ],
+    "newEvents": [
+      {
+        "title": "桃饅の乱・頼朝編",
+        "desc": "高禍原週間バトル（頼朝生誕祭）開催",
+        "date": "2026-05-12",
+        "url": "https://x.com/haruka_ryugu/status/2050078259308793958"
+      },
+      {
+        "title": "頼朝生誕祭2026",
+        "desc": "八葉生誕祭の予告",
+        "date": "",
+        "url": "https://x.com/haruka_ryugu/status/2050077758693539931"
+      }
+    ],
     "maintenance": [
       {
-        "title": "不具合報告",
-        "desc": "複数の不具合を確認",
-        "date": "2026-05-08",
-        "url": "https://x.com/haruka_ryugu/status/2052660292044423583"
+        "title": "不具合調査中",
+        "desc": "一部ユーザーに不具合発生、調査中",
+        "date": "2026-05-03",
+        "url": "https://x.com/haruka_ryugu/status/2050803804015354071"
+      },
+      {
+        "title": "ログイン不具合",
+        "desc": "ログイン失敗しやすい状態",
+        "date": "2026-05-02",
+        "url": "https://x.com/haruka_ryugu/status/2050441295731282266"
+      },
+      {
+        "title": "ドロップ不具合",
+        "desc": "アメリカンドッグがドロップしない",
+        "date": "2026-05-01",
+        "url": "https://x.com/haruka_ryugu/status/2050070657304863013"
       }
     ],
     "goods": [],
