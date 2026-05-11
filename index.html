@@ -22,11 +22,9 @@
   --new:#1a5a28;--port:#1a3a6b;--remaster:#6b4018;--spin:#6b1a3a;
   --dot:#e0e0da;--link:#1a4b8b;--link-h:#0a3070;
 }
-
 body{background:var(--bg);color:var(--text);font-family:'Space Mono','Courier New',monospace;font-size:13px;line-height:1.7;transition:background .2s,color .2s}
 a{color:inherit;text-decoration:none}
 
-/* ── header ── */
 header{background-image:radial-gradient(circle,var(--dot) 1px,transparent 1px);background-size:16px 16px;padding:32px 24px 22px;border-bottom:1px solid var(--border2)}
 .h-wrap{max-width:900px;margin:0 auto}
 .h-eye{font-size:10px;color:var(--dim);letter-spacing:.5em;text-transform:uppercase;margin-bottom:8px}
@@ -36,37 +34,32 @@ header{background-image:radial-gradient(circle,var(--dot) 1px,transparent 1px);b
 .theme-btn{font-family:inherit;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid var(--border2);padding:5px 12px;cursor:pointer;white-space:nowrap;flex-shrink:0}
 .theme-btn:hover{color:var(--white);border-color:var(--text)}
 
-/* ── tabs ── */
 .tab-bar{background:var(--bg);border-bottom:1px solid var(--border2);position:sticky;top:0;z-index:100;transition:background .2s;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none}
 .tab-bar::-webkit-scrollbar{display:none}
 .tab-btn{font-family:inherit;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);background:transparent;border:none;border-bottom:2px solid transparent;padding:13px 18px 11px;cursor:pointer;white-space:nowrap;margin-bottom:-1px;transition:color .15s}
 .tab-btn:hover{color:var(--text)}
 .tab-btn.on{color:var(--white);border-bottom-color:var(--white)}
 
-/* ── panel ── */
 .panel{display:none}
 .panel.on{display:block}
 main{max-width:900px;margin:0 auto;padding:0 24px 80px}
 
-/* section head */
 .sh{padding:28px 0 20px}
 .sh-lbl{font-size:10px;color:var(--dim);letter-spacing:.4em;text-transform:uppercase;margin-bottom:3px}
 .sh-ttl{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px}
 .sh-sub{font-size:11px;color:var(--dim)}
 
-/* ── りゅうみこ rows ── */
 .sum-list{border-top:1px solid var(--border)}
-.sum-row{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);cursor:default}
+.sum-row{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
 .sum-row:hover{background:var(--s1)}
 .st{font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding-top:3px}
-.st.ev{color:var(--event)}.st.bg{color:var(--bug)}.st.cp{color:var(--campaign)}.st.bd{color:var(--birthday)}
+.st.ev{color:var(--event)}.st.bg{color:var(--bug)}.st.cp{color:var(--campaign)}.st.bd{color:var(--birthday)}.st.if{color:var(--dim)}
 .sn{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px}
 .sd{font-size:12px;color:var(--dim);line-height:1.75}
 .sdm{font-size:10px;color:var(--dimmer);margin-top:5px}
-.src{font-size:10px;color:var(--link);margin-top:5px;letter-spacing:.05em}
+.src{font-size:10px;color:var(--link);margin-top:5px;letter-spacing:.05em;display:inline-block}
 .src:hover{text-decoration:underline;color:var(--link-h)}
 
-/* ── game rows ── */
 .g-hdr{display:grid;grid-template-columns:66px 1fr 200px;gap:16px;padding:0 0 10px;border-bottom:1px solid var(--border2);font-size:9px;letter-spacing:.4em;color:var(--dim);text-transform:uppercase}
 .g-list{border-top:1px solid var(--border);margin-top:12px}
 .g-row{display:grid;grid-template-columns:66px 1fr 200px;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);align-items:start}
@@ -79,7 +72,6 @@ main{max-width:900px;margin:0 auto;padding:0 24px 80px}
 .tn{border-color:var(--new);color:var(--new)}.tp{border-color:var(--port);color:var(--port)}
 .tr{border-color:var(--remaster);color:var(--remaster)}.ts{border-color:var(--spin);color:var(--spin)}
 .gpf{font-size:10px;color:var(--dimmer)}
-.g-tw{}
 .gh{font-size:10px;color:var(--link);display:block;margin-bottom:4px}
 .gh:hover{text-decoration:underline;color:var(--link-h)}
 .gb{font-size:11px;color:var(--dim);line-height:1.75}
@@ -87,24 +79,14 @@ main{max-width:900px;margin:0 auto;padding:0 24px 80px}
 .gsrc:hover{text-decoration:underline;color:var(--link-h)}
 .gnd{font-size:10px;color:var(--dimmer);font-style:italic}
 
-/* ── mobile ── */
 @media(max-width:620px){
   header{padding:24px 16px 18px}
   .tab-bar{padding:0 12px}
   main{padding:0 16px 60px}
   .sum-row{grid-template-columns:76px 1fr;gap:12px}
   .g-hdr{display:none}
-  .g-row{
-    grid-template-columns:56px 1fr;
-    grid-template-rows:auto auto;
-    row-gap:0;
-  }
-  .g-tw{
-    grid-column:1 / -1;
-    padding-top:10px;
-    margin-top:2px;
-    border-top:1px dashed var(--border2);
-  }
+  .g-row{grid-template-columns:56px 1fr;grid-template-rows:auto auto;row-gap:0}
+  .g-tw{grid-column:1 / -1;padding-top:10px;margin-top:2px;border-top:1px dashed var(--border2)}
 }
 </style>
 </head>
@@ -117,74 +99,38 @@ main{max-width:900px;margin:0 auto;padding:0 24px 80px}
     <div class="h-title">乙女ゲーム 情報</div>
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">light</button>
   </div>
-  <div class="h-meta" id="hMeta">——</div>
+  <div class="h-meta" id="hMeta">読み込み中...</div>
 </div>
 </header>
 
-<div class="tab-bar" id="tabBar">
+<div class="tab-bar">
   <button class="tab-btn on" onclick="sw(0)">りゅうみこ</button>
   <button class="tab-btn" onclick="sw(1)">乙女新作</button>
 </div>
 
 <main>
 
-<!-- Panel 0: りゅうみこ -->
 <div class="panel on" id="p0">
   <div class="sh">
     <div class="sh-lbl">01</div>
     <div class="sh-ttl">りゅうみこ</div>
     <div class="sh-sub">@haruka_ryugu — 遙かなる時空の中で 龍宮の神子</div>
   </div>
-  <div class="sum-list">
+  <div class="sum-list" id="ryuguList">
     <div class="sum-row">
-      <div class="st ev">event</div>
-      <div>
-        <div class="sn">ダリウス「時空の浮橋」</div>
-        <div class="sd">本日 5/11 23:55 でイベント終了。SRダリウスのログインボーナスも同時終了。</div>
-        <div class="sdm">2026-05-11</div>
-        <a class="src" href="https://x.com/haruka_ryugu/status/2053671448846254509" target="_blank">→ ソースを見る</a>
-      </div>
-    </div>
-    <div class="sum-row">
-      <div class="st cp">campaign</div>
-      <div>
-        <div class="sn">ダリウス登場記念 投稿キャンペーン</div>
-        <div class="sd">#りゅうみこダリウス登場 を付けて感想を投稿で応募完了。〆切 5/11 23:59。</div>
-        <div class="sdm">2026-05-09</div>
-        <a class="src" href="https://x.com/haruka_ryugu/status/2053037265769713840" target="_blank">→ ソースを見る</a>
-      </div>
-    </div>
-    <div class="sum-row">
-      <div class="st bg">bug</div>
-      <div>
-        <div class="sn">不具合報告 3件</div>
-        <div class="sd">① メール一括開封　② 土方SSR 術説明テキスト誤り　③ 自動編成での特効優先処理</div>
-        <div class="sdm">2026-05-08</div>
-        <a class="src" href="https://x.com/haruka_ryugu" target="_blank">→ @haruka_ryugu</a>
-      </div>
-    </div>
-    <div class="sum-row">
-      <div class="st bd">birthday</div>
-      <div>
-        <div class="sn">源 頼朝 誕生日（桜霞の世界）</div>
-        <div class="sd">桜霞の世界キャラ。5月9日が誕生日。</div>
-        <div class="sdm">2026-05-09</div>
-        <a class="src" href="https://x.com/haruka_ryugu/status/2052946664940241328" target="_blank">→ ソースを見る</a>
-      </div>
+      <div class="st if">—</div>
+      <div><div class="sd">データ読み込み中...</div></div>
     </div>
   </div>
 </div>
 
-<!-- Panel 1: 乙女新作 -->
 <div class="panel" id="p1">
   <div class="sh">
     <div class="sh-lbl">02</div>
     <div class="sh-ttl">2026 乙女ゲーム 発売予定</div>
     <div class="sh-sub">出典: <a href="https://w.atwiki.jp/girlgame/pages/507.html" target="_blank" style="color:var(--link)">乙女ゲームまとめ @ ウィキ</a></div>
   </div>
-  <div class="g-hdr">
-    <span>発売日</span><span>タイトル</span><span>最新情報</span>
-  </div>
+  <div class="g-hdr"><span>発売日</span><span>タイトル</span><span>最新情報</span></div>
   <div class="g-list" id="gList"></div>
 </div>
 
@@ -192,33 +138,59 @@ main{max-width:900px;margin:0 auto;padding:0 24px 80px}
 
 <script>
 const GAMES=[
-  {date:"5/28",title:"Starry☆Sky〜Spring Memories〜",platform:"Switch",type:"移植",dev:"arithmetic／dramatic create",handle:null,url:null,summary:null},
-  {date:"6/25",title:"Blackish House ←sideZ -Retour-",platform:"Switch",type:"移植",dev:"arithmetic／EDIA",handle:null,url:null,summary:null},
-  {date:"7/9",title:"CRAZY CHA!N -エルピスの鎖-",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@CC_otomate",url:"https://x.com/CC_otomate",summary:"カードゲーム×乙女のシステム紹介中。発売まで段階的に情報解禁予定。 #クレチェン"},
-  {date:"7/23",title:"ソラ*ユメ",platform:"Switch",type:"移植",dev:"TAKUYO",handle:null,url:null,summary:null},
-  {date:"7/30",title:"君に惑い、君に溺れる。",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@KK_otomate",url:"https://x.com/KK_otomate",summary:"CG解禁・キャラPV公開中。発売日に向けて情報強化中。 #わくでき"},
-  {date:"7/30",title:"テニスの王子様 も～っと 学園祭の王子様 ♡",platform:"Switch",type:"リマスター",dev:"コナミ",handle:null,url:null,summary:null},
-  {date:"7/30",title:"テニスの王子様 ぎゅ～っと! ドキドキサバイバル Tie break ♡",platform:"Switch",type:"リマスター",dev:"コナミ",handle:null,url:null,summary:null},
-  {date:"8/20",title:"あやかしごはん ～おかわりっ!～ for S",platform:"Switch",type:"移植",dev:"arithmetic／EDIA",handle:null,url:null,summary:null},
-  {date:"8/27",title:"薄桜鬼異聞 ベレジンスキーの魔女",platform:"Switch",type:"スピンオフ",dev:"アイディアファクトリー",handle:"@WitchB_otomate",url:"https://x.com/WitchB_otomate",summary:"5/11〜5/15の週、毎日「愛のテーマ＋キャラCV」を公開中。 #ベレ魔女"},
-  {date:"9/10",title:"BLACK WOLVES SAGA for Switch",platform:"Switch",type:"移植",dev:"Rejet／アイディアファクトリー",handle:null,url:null,summary:null},
-  {date:"9/17",title:"Le Mirage Mystique",platform:"Switch",type:"新作",dev:"ブロッコリー／ティズクリエイション",handle:"@Le_Mirage_jp",url:"https://x.com/Le_Mirage_jp",summary:"予約キャンペーン終了（5/10）。全国店舗特典確定、次の情報解禁待ち。 #ミラミス"},
-  {date:"10/1",title:"Sullyland Nursery Rhyme",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@SN_otomate",url:"https://x.com/SN_otomate",summary:"イベントCG解禁が順次進行中。 #サリライ"},
-  {date:"未定",title:"夕刻の町のグロブスター",platform:"Switch",type:"新作",dev:"TAKUYO",handle:"@takuyo_jolly",url:"https://x.com/takuyo_jolly",summary:"専用アカウントなし。TAKUYO公式より。2025年11月以降更新なし。"},
-  {date:"未定",title:"百目ノ花贄",platform:"Switch",type:"新作",dev:"神海処／リベロエンジニア",handle:null,url:null,summary:null},
-  {date:"未定",title:"ALICE=ALICE ＆ BAD MEDICINE 2in1",platform:"Switch/Switch2",type:"移植",dev:"Rejet",handle:null,url:null,summary:null},
-  {date:"未定",title:"MIX DUNK -KING OF BASKETBALL-",platform:"Switch",type:"新作",dev:"VISUALNOTES.／アイディアファクトリー",handle:null,url:null,summary:null},
-  {date:"未定",title:"明治東亰恋伽 トワヰライト・キス",platform:"Switch",type:"移植",dev:"dramatic create",handle:null,url:null,summary:null},
+  {date:"5/28",title:"Starry☆Sky〜Spring Memories〜",platform:"Switch",type:"移植",dev:"arithmetic／dramatic create",handle:null,aurl:null},
+  {date:"6/25",title:"Blackish House ←sideZ -Retour-",platform:"Switch",type:"移植",dev:"arithmetic／EDIA",handle:null,aurl:null},
+  {date:"7/9",title:"CRAZY CHA!N -エルピスの鎖-",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@CC_otomate",aurl:"https://x.com/CC_otomate"},
+  {date:"7/23",title:"ソラ*ユメ",platform:"Switch",type:"移植",dev:"TAKUYO",handle:null,aurl:null},
+  {date:"7/30",title:"君に惑い、君に溺れる。",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@KK_otomate",aurl:"https://x.com/KK_otomate"},
+  {date:"7/30",title:"テニスの王子様 も～っと 学園祭の王子様 ♡",platform:"Switch",type:"リマスター",dev:"コナミ",handle:null,aurl:null},
+  {date:"7/30",title:"テニスの王子様 ぎゅ～っと! ドキドキサバイバル Tie break ♡",platform:"Switch",type:"リマスター",dev:"コナミ",handle:null,aurl:null},
+  {date:"8/20",title:"あやかしごはん ～おかわりっ!～ for S",platform:"Switch",type:"移植",dev:"arithmetic／EDIA",handle:null,aurl:null},
+  {date:"8/27",title:"薄桜鬼異聞 ベレジンスキーの魔女",platform:"Switch",type:"スピンオフ",dev:"アイディアファクトリー",handle:"@WitchB_otomate",aurl:"https://x.com/WitchB_otomate"},
+  {date:"9/10",title:"BLACK WOLVES SAGA for Switch",platform:"Switch",type:"移植",dev:"Rejet／アイディアファクトリー",handle:null,aurl:null},
+  {date:"9/17",title:"Le Mirage Mystique",platform:"Switch",type:"新作",dev:"ブロッコリー／ティズクリエイション",handle:"@Le_Mirage_jp",aurl:"https://x.com/Le_Mirage_jp"},
+  {date:"10/1",title:"Sullyland Nursery Rhyme",platform:"Switch",type:"新作",dev:"アイディアファクトリー",handle:"@SN_otomate",aurl:"https://x.com/SN_otomate"},
+  {date:"未定",title:"夕刻の町のグロブスター",platform:"Switch",type:"新作",dev:"TAKUYO",handle:"@takuyo_jolly",aurl:"https://x.com/takuyo_jolly"},
+  {date:"未定",title:"百目ノ花贄",platform:"Switch",type:"新作",dev:"神海処／リベロエンジニア",handle:null,aurl:null},
+  {date:"未定",title:"ALICE=ALICE ＆ BAD MEDICINE 2in1",platform:"Switch/Switch2",type:"移植",dev:"Rejet",handle:null,aurl:null},
+  {date:"未定",title:"MIX DUNK -KING OF BASKETBALL-",platform:"Switch",type:"新作",dev:"VISUALNOTES.／アイディアファクトリー",handle:null,aurl:null},
+  {date:"未定",title:"明治東亰恋伽 トワヰライト・キス",platform:"Switch",type:"移植",dev:"dramatic create",handle:null,aurl:null},
 ];
 
 const tc={新作:'tn',移植:'tp',リマスター:'tr',スピンオフ:'ts'};
-const gl=document.getElementById('gList');
-GAMES.forEach(g=>{
-  const tw=g.handle
-    ?`<a class="gh" href="${g.url}" target="_blank">${g.handle}</a><div class="gb">${g.summary}</div><a class="gsrc" href="${g.url}" target="_blank">→ Xで確認</a>`
-    :`<span class="gnd">調査中</span>`;
-  gl.innerHTML+=`<div class="g-row"><div class="gd">${g.date}</div><div><div class="gt">${g.title}</div><div class="gdev">${g.dev}</div><div class="gtags"><span class="gtag ${tc[g.type]||'tn'}">${g.type}</span><span class="gpf">${g.platform}</span></div></div><div class="g-tw">${tw}</div></div>`;
-});
+const tMap={event:'ev',bug:'bg',campaign:'cp',birthday:'bd',info:'if'};
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function renderRyugu(tweets){
+  const el=document.getElementById('ryuguList');
+  if(!tweets||!tweets.length){
+    el.innerHTML='<div class="sum-row"><div class="st if">—</div><div><div class="sd">データなし</div></div></div>';
+    return;
+  }
+  el.innerHTML=tweets.map(t=>`<div class="sum-row">
+  <div class="st ${tMap[t.type]||'if'}">${esc(t.type||'info')}</div>
+  <div>
+    <div class="sd">${esc(t.text).replace(/\n/g,'<br>')}</div>
+    <div class="sdm">${esc(t.date||'')}</div>
+    <a class="src" href="${esc(t.url)}" target="_blank" rel="noopener">→ ソースを見る</a>
+  </div>
+</div>`).join('');
+}
+
+function renderGames(gd){
+  const gl=document.getElementById('gList');
+  gl.innerHTML='';
+  GAMES.forEach(g=>{
+    const d=g.handle&&gd&&gd[g.handle];
+    const tw=d
+      ?`<a class="gh" href="${esc(g.aurl)}" target="_blank" rel="noopener">${esc(g.handle)}</a><div class="gb">${esc(d.latestText)}</div><a class="gsrc" href="${esc(d.url)}" target="_blank" rel="noopener">→ ソースを見る</a>`
+      :g.handle
+      ?`<a class="gh" href="${esc(g.aurl)}" target="_blank" rel="noopener">${esc(g.handle)}</a><span class="gnd">更新中...</span>`
+      :`<span class="gnd">調査中</span>`;
+    gl.innerHTML+=`<div class="g-row"><div class="gd">${esc(g.date)}</div><div><div class="gt">${esc(g.title)}</div><div class="gdev">${esc(g.dev)}</div><div class="gtags"><span class="gtag ${tc[g.type]||'tn'}">${esc(g.type)}</span><span class="gpf">${esc(g.platform)}</span></div></div><div class="g-tw">${tw}</div></div>`;
+  });
+}
 
 function sw(i){
   document.querySelectorAll('.tab-btn').forEach((b,j)=>b.classList.toggle('on',j===i));
@@ -232,7 +204,31 @@ function toggleTheme(){
 }
 if(localStorage.getItem('t')==='l'){document.documentElement.setAttribute('data-theme','light');document.getElementById('themeBtn').textContent='dark';}
 
-document.getElementById('hMeta').textContent='最終更新 '+new Date().toLocaleString('ja-JP',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+function fmtDate(iso){
+  try{const d=new Date(iso);return d.getFullYear()+'/'+(d.getMonth()+1).toString().padStart(2,'0')+'/'+d.getDate().toString().padStart(2,'0')+' '+d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0');}
+  catch(e){return iso||'——';}
+}
+
+// Initial render (empty twitter data)
+renderGames(null);
+
+// Load data.json
+fetch('./data.json?_='+Date.now())
+  .then(r=>r.ok?r.json():null)
+  .then(data=>{
+    if(!data){
+      renderRyugu(null);
+      document.getElementById('hMeta').textContent='データ取得中...';
+      return;
+    }
+    renderRyugu(data.ryugu);
+    renderGames(data.games);
+    document.getElementById('hMeta').textContent='最終更新 '+fmtDate(data.updated);
+  })
+  .catch(()=>{
+    renderRyugu(null);
+    document.getElementById('hMeta').textContent='——';
+  });
 </script>
 </body>
 </html>
