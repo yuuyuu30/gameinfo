@@ -1,36 +1,45 @@
 {
-  "updated": "2026-05-13T01:33:07.183Z",
+  "updated": "2026-05-13T05:33:04.959Z",
   "ryugu": {
-    "gachaPickup": [],
+    "gachaPickup": [
+      {
+        "title": "佐伯昌長ピックアップ召喚",
+        "desc": "佐伯昌長のピックアップ召喚を開催中",
+        "date": "2026-05-25",
+        "url": "https://x.com/haruka_ryugu/status/2054034075204178134/photo/1"
+      }
+    ],
     "newEvents": [
       {
-        "title": "開始時刻訂正",
-        "desc": "イベント開始時刻を本日15時と訂正",
-        "date": "2026-05-12",
-        "url": "https://x.com/haruka_ryugu/status/2054034578864484556/photo/2"
-      },
-      {
-        "title": "頼朝生誕祭終了間近",
-        "desc": "本日23:59で頼朝様の生誕祭が終了",
-        "date": "2026-05-12",
-        "url": "https://x.com/haruka_ryugu/status/2054035082386522592/photo/1"
-      },
-      {
-        "title": "強敵出現：嵐龍",
-        "desc": "シーズン17木属性嵐龍が出現中",
+        "title": "嵐龍出現キャンペーン",
+        "desc": "高禍原に新たな強敵出現、シーズン17",
         "date": "2026-05-18",
         "url": "https://x.com/haruka_ryugu/status/2054034830233399376/photo/1"
       },
       {
-        "title": "夢現の逢瀬開催中",
-        "desc": "月間イベント「夢現の逢瀬 動物園編」開催中",
+        "title": "夢現の逢瀬 動物園編",
+        "desc": "月間イベント「夢現の逢瀬」開催中",
         "date": "",
         "url": "https://x.com/haruka_ryugu/status/2054034327361777874/photo/1"
       }
     ],
-    "maintenance": [],
+    "maintenance": [
+      {
+        "title": "不具合報告",
+        "desc": "龍水晶パス誤通知と通信エラー確認",
+        "date": "",
+        "url": "https://x.com/haruka_ryugu/status/2054426921954652341"
+      }
+    ],
     "goods": [],
-    "sequel": [],
+    "sequel": [
+      {
+        "title": "佐伯昌長続編公開",
+        "desc": "異世界の物語の続編（49話まで）公開中",
+        "date": "",
+        "url": "https://x.com/haruka_ryugu/status/2054033825945276517/photo/1"
+      }
+    ],
     "eventCalendar": [
       {
         "title": "夢現の逢瀬～動物園編～",
