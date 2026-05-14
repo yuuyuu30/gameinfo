@@ -1,13 +1,20 @@
 {
-  "updated": "2026-05-13T09:33:04.505Z",
+  "updated": "2026-05-14T01:15:44.799Z",
   "ryugu": {
     "gachaPickup": [],
-    "newEvents": [],
+    "newEvents": [
+      {
+        "title": "強敵出現",
+        "desc": "シーズン17：木属性「嵐龍」開催中",
+        "date": "2026年5月18日(月)23:59",
+        "url": "https://x.com/haruka_ryugu/status/2054034830233399376/photo/1"
+      }
+    ],
     "maintenance": [
       {
         "title": "不具合報告",
-        "desc": "龍水晶30日パス通知誤り、通信エラー",
-        "date": "2026-05-13",
+        "desc": "龍水晶30日パスとプロローグスキップの不具合を確認",
+        "date": "",
         "url": "https://x.com/haruka_ryugu/status/2054426921954652341"
       }
     ],
