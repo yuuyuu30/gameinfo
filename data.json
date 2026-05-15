@@ -1,19 +1,26 @@
 {
-  "updated": "2026-05-15T01:15:37.926Z",
+  "updated": "2026-05-15T05:15:38.990Z",
   "ryugu": {
-    "gachaPickup": [],
+    "gachaPickup": [
+      {
+        "title": "伊達政宗ピックアップ",
+        "desc": "伊達政宗のピックアップ召喚を開催",
+        "date": "2026-06-01",
+        "url": "https://x.com/haruka_ryugu/status/2055151186622488721/photo/1"
+      }
+    ],
     "newEvents": [
       {
-        "title": "新强敌出现",
-        "desc": "高祸原新强敌活动期间",
-        "date": "2026年5月18日23:59",
-        "url": "https://x.com/haruka_ryugu/status/2054034830233399376/photo/1"
+        "title": "新強敵出現",
+        "desc": "高禍原に化け猫出現、シーズン18開催",
+        "date": "2026-05-25",
+        "url": "https://x.com/haruka_ryugu/status/2055151437550690418/photo/1"
       }
     ],
     "maintenance": [
       {
-        "title": "不具合报告",
-        "desc": "确认两项异常：期限通知误表示和通信错误",
+        "title": "不具合報告",
+        "desc": "パス通知誤り、スキップ通信エラー",
         "date": "",
         "url": "https://x.com/haruka_ryugu/status/2054426921954652341"
       }
@@ -50,12 +57,6 @@
         "desc": "5月18日(月)23:59まで",
         "date": "5月18日(月)23:59",
         "url": "https://gamewith.jp/haruka-ryugu/533785#h3-2-1776678662017"
-      },
-      {
-        "title": "時空の浮橋イベント",
-        "desc": "5月11日(月)23:59",
-        "date": "5月11日(月)23:59",
-        "url": "https://gamewith.jp/haruka-ryugu/533785#h3-1-1775529016708"
       },
       {
         "title": "高禍原週間バトル",
