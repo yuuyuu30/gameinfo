@@ -1,13 +1,25 @@
 {
-  "updated": "2026-05-15T09:15:35.886Z",
+  "updated": "2026-05-15T13:33:04.814Z",
   "ryugu": {
     "gachaPickup": [],
     "newEvents": [
       {
-        "title": "0.5周年感謝祭カウントダウン",
-        "desc": "限定ログインボーナスを実施",
-        "date": "2026-05-15",
+        "title": "記念特番放送決定",
+        "desc": "5月21日20時から生配信",
+        "date": "",
+        "url": "https://x.com/haruka_ryugu/status/2055211685418565899/photo/1"
+      },
+      {
+        "title": "0.5周年感謝祭ログボ",
+        "desc": "0.5周年カウントダウン限定ログインボーナス",
+        "date": "",
         "url": "https://x.com/haruka_ryugu/status/2055211591738540185/photo/2"
+      },
+      {
+        "title": "新強敵出現化け猫",
+        "desc": "シーズン18火属性化け猫5/19-5/25",
+        "date": "2026-05-25",
+        "url": "https://x.com/haruka_ryugu/status/2055151437550690418/photo/1"
       }
     ],
     "maintenance": [],
